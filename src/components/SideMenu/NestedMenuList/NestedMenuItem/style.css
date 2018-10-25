@@ -60,6 +60,10 @@
   color: white;
   font-weight: bold;
 }
+.container.parentafter {
+  color: white;
+  font-weight: bold;
+}
 .NestedMenuItem-amount {
   font-size: 11px;
   padding: 0 4px;
