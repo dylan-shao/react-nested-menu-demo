@@ -1,9 +1,14 @@
-.NestedMenuList {
-
+.NestedMenuList-content {
+  padding: 5px 0;
 }
 
+.NestedMenuList-content:first-child,
+.NestedMenuList-content:last-child {
+  padding-bottom: 0;
+
+}
 .NestedMenuList-sub{
-  padding-left: 20px
+  padding: 10px 0 15px 20px;
 }
 ul, li {
   list-style: none;

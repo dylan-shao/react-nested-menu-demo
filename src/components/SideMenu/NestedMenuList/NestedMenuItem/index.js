@@ -33,19 +33,19 @@ class NestedMenuItem extends Component {
     this.props.hasChild && this.props.updateChild(!this.state.checked);
   };
   render() {
-    const { name, amount } = this.props;
+    const { name, amount, hasChild } = this.props;
     const { checked } = this.state;
-
+    const parentClass = hasChild ? 'parent' : '';
     return (
       <div className="NestedMenuItem">
         <div>
-          <label class="container">
+          <label class={`container ${parentClass}`} >
             {name}
             <input checked={checked} type="checkbox" onChange={this.toggleItem} />
             <span className="checkmark" />
           </label>
         </div>
-        <div className="NestedMenuItem-amount">{amount}</div>
+        <div className={`NestedMenuItem-amount ${parentClass}`}>{amount}</div>
       </div>
     );
   }

@@ -9,6 +9,7 @@
   padding-left: 25px;
   cursor: pointer;
   user-select: none;
+  font-size: 13px;
 }
 
 /* Hide the browser's default checkbox */
@@ -23,7 +24,7 @@
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 3px;
+  top: 0;
   left: 0;
   height: 13px;
   width: 13px;
@@ -53,4 +54,19 @@
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+.container.parent {
+  color: white;
+  font-weight: bold;
+}
+.NestedMenuItem-amount {
+  font-size: 11px;
+  padding: 0 4px;
+  color: rgb(176, 190, 196);
+}
+.NestedMenuItem-amount.parent {
+  background-color: rgb(80, 105, 117);
+  border-radius: 10px;
+  color: white;
 }

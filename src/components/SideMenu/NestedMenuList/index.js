@@ -40,6 +40,7 @@ class NestedMenuList extends Component {
     const { name, amount = this.getAmount(data.amount, data.positions), positions, id } = data;
     const { parentChecked } = this.state;
     const hasChild = !!positions;
+    const childClass = hasChild? 'NestedMenuList-sub' : '';
 
     if (!data) {
       return null;
@@ -54,7 +55,7 @@ class NestedMenuList extends Component {
           updateChild={this.setParentCheckeStatus}
           parentChecked={parentChecked}
         />
-        <ul className="NestedMenuList-sub">
+        <ul className={`NestedMenuList ${childClass}`}>
           {positions &&
             positions.map(item => {
               return <NestedMenuList data={item} key={item.id} parentChecked={parentChecked} />;
