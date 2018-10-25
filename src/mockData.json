@@ -1,0 +1,32 @@
+[
+  {
+    "name": "工程研发部门",
+    "id": 1,
+    "positions": [
+      { "name": "Mac开发工程师", "amount": 9, "id": 11 },
+      { "name": "iOS App测试工程师", "amount": 17, "id": 12 },
+      { "name": "Android远程控制工程师", "amount": 61, "id": 13 },
+      { "name": "Web前端工程师", "amount": 31, "id": 14 },
+      { "name": "Andriod多媒体软件开发工程师", "amount": 2, "id": 15 }
+    ]
+  },
+  {
+    "name": "产品设计部门",
+    "id": 2,
+    "positions": [
+      { "name": "网页设计师", "amount": 47, "id": 21 },
+      { "name": "ID/工业设计师", "amount": 39, "id": 22 },
+      { "name": "视觉设计师/GUI界面设计师", "amount": 42, "id": 23 },
+      {
+        "name": "平面设计师",
+        "positions": [
+          { "name": "网页设计师", "amount": 47, "id": 21 },
+          { "name": "ID/工业设计师", "amount": 39, "id": 22 },
+          { "name": "视觉设计师/GUI界面设计师", "amount": 42, "id": 23 },
+          { "name": "平面设计师", "amount": 8, "id": 24 }
+        ],
+        "id": 24
+      }
+    ]
+  }
+]
