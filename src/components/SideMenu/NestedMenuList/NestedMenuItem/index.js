@@ -32,6 +32,7 @@ class NestedMenuItem extends Component {
     this.setState({ checked: !this.state.checked });
     this.props.hasChild && this.props.updateChild(!this.state.checked);
   };
+  
   render() {
     const { name, amount, hasChild } = this.props;
     const { checked } = this.state;
@@ -39,8 +40,8 @@ class NestedMenuItem extends Component {
     return (
       <div className="NestedMenuItem">
         <div>
-          <label class={`container ${parentClass}`} >
-            {name}
+          <label className={`container ${parentClass}`} >
+            {name}   {hasChild && <i className="down"></i>}
             <input checked={checked} type="checkbox" onChange={this.toggleItem} />
             <span className="checkmark" />
           </label>

@@ -18,6 +18,13 @@ class NestedMenuList extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if(nextState.parentChecked === this.state.parent) {
+      return false;
+    }
+    return true;
+  }
+
   // TODO this should be refactored into selectors
   // recursive call to calculate the amount
   getAmount = (amount, positions) => {

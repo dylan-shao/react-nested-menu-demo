@@ -60,10 +60,21 @@
   color: white;
   font-weight: bold;
 }
-.container.parentafter {
-  color: white;
-  font-weight: bold;
+
+/* for the arrow down*/
+i {
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 2px;
+  color:white
 }
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+/* end arrow down*/
+
 .NestedMenuItem-amount {
   font-size: 11px;
   padding: 0 4px;

@@ -23,7 +23,7 @@ class SideMenu extends Component {
   render() {
     const { checkStatus, multiLevel } = this.state;
     const data = multiLevel ? mockDataMultiLevel : mockData;
-    const btnText = multiLevel ? '点击切换双级餐单' : '点击切换多级餐单';
+    const btnText = multiLevel ? '点击切换双级菜单' : '点击切换多级菜单';
 
     return (
       <div className="SideMenu-container">
