@@ -1,9 +1,10 @@
 .SideMenu {
   height: 90vh;
   width: 30vw;
-  border: 1px solid grey;
-  margin: 2%;
-  padding: 10px;
+  margin: 30px;
+  padding: 30px;
+  background-color: rgb(96,125,139);
+  color:white
 }
 
 .SideMenu-header{

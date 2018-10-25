@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MenuItem from './MenuItem';
+import NestedMenuItem from './NestedMenuItem';
 import './style.css';
 
-class NestedMenu extends Component {
+// will render menu recursively, maintain parentChecked state which is for
+class NestedMenuList extends Component {
   constructor() {
     super();
     this.state = {
       parentChecked: false,
     };
   }
-  
+
   componentWillReceiveProps({ parentChecked }) {
     if (parentChecked !== this.state.parentChecked) {
       this.setState({ parentChecked: parentChecked });
@@ -30,7 +31,7 @@ class NestedMenu extends Component {
     }, 0);
   };
 
-  toggleParentChecked = checked => {
+  setParentCheckeStatus = checked => {
     this.setState({ parentChecked: checked });
   };
 
@@ -38,34 +39,33 @@ class NestedMenu extends Component {
     const { data } = this.props;
     const { name, amount = this.getAmount(data.amount, data.positions), positions, id } = data;
     const { parentChecked } = this.state;
+    const hasChild = !!positions;
 
     if (!data) {
       return null;
     }
 
     return (
-      <ul className="NestedMenu">
-        <li className="NestedMenu-content" key={id}>
-          <MenuItem
-            name={name}
-            amount={amount}
-            hasChild={!!positions}
-            updateChild={positions && this.toggleParentChecked}
-            parentChecked={parentChecked}
-          />
-          <div className="NestedMenu-sub">
-            {positions &&
-              positions.map(item => {
-                return <NestedMenu data={item} key={item.id} parentChecked={parentChecked} />;
-              })}
-          </div>
-        </li>
-      </ul>
+      <li className="NestedMenuList-content" key={id}>
+        <NestedMenuItem
+          name={name}
+          amount={amount}
+          hasChild={hasChild}
+          updateChild={this.setParentCheckeStatus}
+          parentChecked={parentChecked}
+        />
+        <ul className="NestedMenuList-sub">
+          {positions &&
+            positions.map(item => {
+              return <NestedMenuList data={item} key={item.id} parentChecked={parentChecked} />;
+            })}
+        </ul>
+      </li>
     );
   }
 }
 
-NestedMenu.defaultProps = {
+NestedMenuList.defaultProps = {
   parentChecked: false,
   data: {
     name: '',
@@ -73,7 +73,8 @@ NestedMenu.defaultProps = {
     positions: [],
   },
 };
-NestedMenu.propTypes = {
+
+NestedMenuList.propTypes = {
   data: PropTypes.shape({
     name: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
@@ -82,4 +83,4 @@ NestedMenu.propTypes = {
   parentChecked: PropTypes.bool,
 };
 
-export default NestedMenu;
+export default NestedMenuList;
