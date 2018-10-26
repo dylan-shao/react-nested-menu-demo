@@ -1,6 +1,6 @@
 # React "递归"菜单
 
-[Online demo](https://codesandbox.io/s/k1olwwnzrv)
+[Online demo](https://k1olwwnzrv.codesandbox.io/)
 
 ## How to run it locally
 ```
